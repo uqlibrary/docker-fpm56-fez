@@ -1,11 +1,12 @@
 FROM uqlibrary/docker-fpm56:5
 
-RUN yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm && \
+RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
+  yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm && \
   yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
-  yum install --enablerepo=epel-testing -y perl-Image-ExifTool && \
-  yum install -y \
-    poppler-utils \
-    ffmpeg && \
+  yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm && \
+  yum install -y poppler-utils
+  yum install -y perl-Image-ExifTool --enablerepo=epel-testing && \
+  yum install -y ffmpeg --enablerepo=nux-dextop && \
   yum install -y ImageMagick-last ImageMagick-last-devel --enablerepo=remi --skip-broken && \
   wget -O /usr/local/src/jhove.tar.gz http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.11/jhove-1_11.tar.gz && \
   wget -O /usr/local/src/yamdi.tar.gz http://downloads.sourceforge.net/project/yamdi/yamdi/1.9/yamdi-1.9.tar.gz && \
