@@ -26,6 +26,8 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
 COPY jhove /usr/local/jhove/
 RUN chmod +x /usr/local/jhove/jhove
 
+COPY etc/php-fpm.d/www.conf /etc/php-fpm.d/www.conf
+
 RUN mkdir -p /espace/data && \
   mkdir -p /espace_san/incoming && \
   sed -i "s/memory_limit = 128M/memory_limit = 800M/" /etc/php.ini && \
