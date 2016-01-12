@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-fpm56:5
+FROM uqlibrary/docker-fpm56:6
 
 RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm && \
