@@ -5,6 +5,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
   yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm && \
   yum install -y file && \
+  yum install -y mysql && \
   yum install -y poppler-utils && \
   yum install -y perl-Image-ExifTool --enablerepo=epel-testing && \
   yum install -y ffmpeg --enablerepo=nux-dextop && \
