@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-fpm56:11
+FROM uqlibrary/docker-fpm56:12
 
 RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
