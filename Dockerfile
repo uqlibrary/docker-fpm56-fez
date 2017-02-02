@@ -12,6 +12,8 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   wget -O /usr/local/src/jhove.tar.gz http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.11/jhove-1_11.tar.gz && \
   wget -O /usr/local/src/yamdi.tar.gz http://downloads.sourceforge.net/project/yamdi/yamdi/1.9/yamdi-1.9.tar.gz && \
   wget -O /usr/local/src/graphviz.tar.gz http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.38.0.tar.gz && \
+  wget -O /usr/local/src/gs.tar.gz http://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs920/ghostscript-9.20-linux-x86_64.tgz && \
+  cd /usr/local/src && tar xvzf gs.tar.gz && \
   cd /usr/local/src && tar xvzf yamdi.tar.gz && \
   cd /usr/local/src && tar xvzf jhove.tar.gz && \
   cd /usr/local/src && tar xvzf graphviz.tar.gz && \
@@ -21,6 +23,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   cd /usr/local/src/graphviz-2.38.0 && ./configure && make && make install && \
   yum install -y java-1.8.0-openjdk-headless && \
   mv /usr/local/src/jhove /usr/local/jhove && rm -f /usr/local/src/jhove.tar.gz && \
+  mv -f /usr/local/src/ghostscript-9.20-linux-x86_64/gs-920-linux_x86_64 /usr/bin/gs && rm -f /usr/local/src/gs.tar.gz && \
   yum group remove -y "Development Tools" && \
   yum autoremove -y && yum clean all
 
