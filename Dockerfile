@@ -6,7 +6,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y file && \
   yum install -y mysql && \
   yum install -y poppler-utils && \
-  yum install -y perl-Image-ExifTool --enablerepo=epel-testing && \
+  yum install -y perl-IO-Compress perl-Image-ExifTool --enablerepo=epel-testing && \
   yum install -y ffmpeg --enablerepo=nux-dextop && \
   yum install -y ImageMagick7 ImageMagick7-devel --enablerepo=remi --skip-broken && \
   wget -O /usr/local/src/jhove.tar.gz http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.11/jhove-1_11.tar.gz && \
