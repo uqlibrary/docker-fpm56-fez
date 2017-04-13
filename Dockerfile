@@ -39,5 +39,6 @@ RUN mkdir -p /espace/data && \
   sed -i "s/max_execution_time = 30/max_execution_time = 300/" /etc/php.ini && \
   sed -i "s/upload_max_filesize = 30M/upload_max_filesize = 800M/" /etc/php.ini && \
   sed -i "s/session.gc_maxlifetime = 1440/session.gc_maxlifetime = 2880/" /etc/php.ini && \
+  sed -i "s/zend.enable_gc = On/zend.enable_gc = Off/" /etc/php.ini && \
   sed -i "s/opcache.fast_shutdown=1/opcache.fast_shutdown=0/" /etc/php.d/10-opcache.ini && \
   sed -i "s/; max_input_vars = 1000/max_input_vars = 5000/" /etc/php.ini
